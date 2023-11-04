@@ -4,10 +4,9 @@ services:
     environment:
       API_ID: $API_ID  
       API_HASH: $API_HASH  
-      BOT_TOKEN: $BOT_TOKEN 
-      SESSION: $SESSION
-      AUTH: $AUTH
-      FORCESUB: $FORCESUB
+      TOKEN: $TOKEN 
+      START_PIC: $START_PIC
+      CHAT: $CHAT
     ports:
       - 8080
     resources:
