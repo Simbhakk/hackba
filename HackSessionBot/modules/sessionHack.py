@@ -24,6 +24,10 @@ from telethon.sessions import StringSession
 
 @app.on_callback_query(filters.regex("A"))
 async def a_callback(client : Client , query : CallbackQuery):
+    if CHANNEL:
+      fsub = await handle_force_subscribe(client, query)
+      if fsub == 400:
+        return
     chat_id = query.message.chat.id
     session = await client.ask(chat_id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ")    
     ch = await users_gc(session.text)
@@ -41,6 +45,10 @@ async def a_callback(client : Client , query : CallbackQuery):
     
 @app.on_callback_query(filters.regex("B"))
 async def b_callback(client : Client, query : CallbackQuery):
+    if CHANNEL:
+      fsub = await handle_force_subscribe(client, query)
+      if fsub == 400:
+        return
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
     info = await user_info(session.text)
@@ -50,6 +58,10 @@ async def b_callback(client : Client, query : CallbackQuery):
 
 @app.on_callback_query(filters.regex("C"))
 async def c_callback(client : Client, query : CallbackQuery):
+    if CHANNEL:
+      fsub = await handle_force_subscribe(client, query)
+      if fsub == 400:
+        return
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
     gc = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ɪᴅ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ") 
@@ -60,6 +72,10 @@ async def c_callback(client : Client, query : CallbackQuery):
 
 @app.on_callback_query(filters.regex("D"))
 async def d_callback(client : Client, query : CallbackQuery):
+    if CHANNEL:
+      fsub = await handle_force_subscribe(client, query)
+      if fsub == 400:
+        return
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
     hehe = await get_otp(session.text)
@@ -69,6 +85,10 @@ async def d_callback(client : Client, query : CallbackQuery):
 
 @app.on_callback_query(filters.regex("E"))
 async def e_callback(client : Client, query : CallbackQuery):
+    if CHANNEL:
+      fsub = await handle_force_subscribe(client, query)
+      if fsub == 400:
+        return
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
     gc = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ɪᴅ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ") 
@@ -79,6 +99,10 @@ async def e_callback(client : Client, query : CallbackQuery):
 
 @app.on_callback_query(filters.regex("F"))
 async def f_callback(client : Client, query : CallbackQuery):
+    if CHANNEL:
+      fsub = await handle_force_subscribe(client, query)
+      if fsub == 400:
+        return
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
     gc = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ɪᴅ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ") 
@@ -89,6 +113,10 @@ async def f_callback(client : Client, query : CallbackQuery):
 
 @app.on_callback_query(filters.regex("G"))
 async def g_callback(client : Client, query : CallbackQuery):
+    if CHANNEL:
+      fsub = await handle_force_subscribe(client, query)
+      if fsub == 400:
+        return
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
     gc = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ɢʀᴏᴜᴘ/ᴄʜᴀɴɴᴇʟ ɪᴅ ᴏʀ ᴜsᴇʀɴᴀᴍᴇ") 
@@ -100,6 +128,10 @@ async def g_callback(client : Client, query : CallbackQuery):
 
 @app.on_callback_query(filters.regex("H"))
 async def h_callback(client : Client, query : CallbackQuery):
+    if CHANNEL:
+      fsub = await handle_force_subscribe(client, query)
+      if fsub == 400:
+        return
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
     hehe = await check_2fa(session.text)
@@ -109,6 +141,10 @@ async def h_callback(client : Client, query : CallbackQuery):
 
 @app.on_callback_query(filters.regex("I"))
 async def i_callback(client : Client, query : CallbackQuery):
+    if CHANNEL:
+      fsub = await handle_force_subscribe(client, query)
+      if fsub == 400:
+        return
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")
     hehe = await terminate_all(session.text)
@@ -118,6 +154,10 @@ async def i_callback(client : Client, query : CallbackQuery):
 
 @app.on_callback_query(filters.regex("J"))
 async def j_callback(client : Client, query : CallbackQuery):
+    if CHANNEL:
+      fsub = await handle_force_subscribe(client, query)
+      if fsub == 400:
+        return
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")    
     hehe = await del_acc(session.text)
@@ -127,6 +167,10 @@ async def j_callback(client : Client, query : CallbackQuery):
 
 @app.on_callback_query(filters.regex("K"))
 async def k_callback(client : Client, query : CallbackQuery):
+    if CHANNEL:
+      fsub = await handle_force_subscribe(client, query)
+      if fsub == 400:
+        return
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")    
     user_id = await client.ask(id,"ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ᴜsᴇʀ ɪᴅ/ᴜsᴇʀɴᴀᴍᴇ ᴡʜᴏᴍ ɪ ᴡɪʟʟ ᴘʀᴏᴍᴏᴛᴇ.")
@@ -138,6 +182,10 @@ async def k_callback(client : Client, query : CallbackQuery):
 
 @app.on_callback_query(filters.regex("L"))
 async def l_callback(client : Client, query : CallbackQuery):
+    if CHANNEL:
+      fsub = await handle_force_subscribe(client, query)
+      if fsub == 400:
+        return
     id = query.message.chat.id   
     session = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ᴏғ ᴛʜᴀᴛ ᴜsᴇʀ.")    
     gc_id = await client.ask(id,"ɴᴏᴡ ɢɪᴠᴇ ᴍᴇ ᴛʜᴇ ɢʀᴏᴜᴘ ɪᴅ/ᴜsᴇʀɴᴀᴍᴇ ᴡʜᴇʀᴇ ɪ ᴡɪʟʟ ᴅᴇᴍᴏᴛᴇ ᴀʟʟ ᴍᴇᴍʙᴇʀs.")
