@@ -7,6 +7,7 @@ from pyrogram.raw import functions
 from HackSessionBot import (
      API_ID,
      API_HASH,
+     CHANNEL,
      CHAT )
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest , JoinChannelRequest as join , LeaveChannelRequest as leave , DeleteChannelRequest as dc
 from HackSessionBot.Helpers.data import info
