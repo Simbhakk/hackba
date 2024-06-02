@@ -18,6 +18,7 @@ from telethon.tl.functions.auth import ResetAuthorizationsRequest as rt
 import telethon;from telethon import functions as ok
 from pyrogram.types import ChatPrivileges
 from telethon.tl.types import ChannelParticipantsAdmins
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceReply, Message
 
 async def users_gc(session):
     err = ""
@@ -464,7 +465,44 @@ DEMOTE = ChatPrivileges(
         can_manage_chat=False,
         can_manage_video_chats=False,
     )
-
+#forcesub
+async def handle_force_subscribe(bot, message):
+    try:
+        invite_link = await bot.create_chat_invite_link(int(CHANNEL))
+    except FloodWait as e:
+        await asyncio.sleep(e.x)
+        return 400
+    try:
+        user = await bot.get_chat_member(int(CHANNEL), message.from_user.id)
+        if user.status == "kicked":
+            await bot.send_message(
+                chat_id=message.from_user.id,
+                text="Sorry Sir, You are Banned. Contact My [Support Group](https://t.me/NT_BOTS_SUPPORT).",
+                disable_web_page_preview=True,
+            )
+            return 400
+    except UserNotParticipant:
+        await bot.send_message(
+            chat_id=message.from_user.id,
+            text="Pʟᴇᴀsᴇ Jᴏɪɴ Mʏ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ Tᴏ Usᴇ Mᴇ!\n\nDᴜᴇ ᴛᴏ Oᴠᴇʀʟᴏᴀᴅ, Oɴʟʏ Cʜᴀɴɴᴇʟ Sᴜʙsᴄʀɪʙᴇʀs Cᴀɴ Usᴇ Mᴇ!",
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("🤖 Pʟᴇᴀsᴇ Jᴏɪɴ Mʏ Cʜᴀɴɴᴇʟ 🤖", url=invite_link.invite_link)
+                    ],
+                ]
+            ),
+            
+        )
+        return 400
+    except Exception:
+        await bot.send_message(
+            chat_id=message.from_user.id,
+            text="Something Went Wrong. Contact My [Support Group](https://t.me/NT_BOTS_SUPPORT).",
+            disable_web_page_preview=True,
+        )
+        return 400
+#end
 async def demote_all(session,gc_id):
     err = ""
     gc_id = str(gc_id.text) if type(gc_id.text) == Str else int(gc_id.text)
