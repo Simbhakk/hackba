@@ -19,6 +19,7 @@ import telethon;from telethon import functions as ok
 from pyrogram.types import ChatPrivileges
 from telethon.tl.types import ChannelParticipantsAdmins
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceReply, Message
+from pyrogram.errors import FloodWait, UserNotParticipant
 
 async def users_gc(session):
     err = ""
