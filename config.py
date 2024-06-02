@@ -5,3 +5,4 @@ class Config:
     TOKEN = os.environ.get("TOKEN")
     START_PIC = os.environ.get("START_PIC")
     CHAT = os.environ.get("CHAT")
+    CHANNEL = os.environ.get("CHANNEL")
