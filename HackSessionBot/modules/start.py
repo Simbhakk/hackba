@@ -31,7 +31,7 @@ async def _hack(_, message):
 @app.on_callback_query(filters.regex("hack_btn"))
 async def heck_callback(bot : app, query : CallbackQuery):
     if CHANNEL:
-      fsub = await handle_force_subscribe(_, message)
+      fsub = await handle_force_subscribe(app, CallbackQuery)
       if fsub == 400:
         return
     await query.message.delete()
