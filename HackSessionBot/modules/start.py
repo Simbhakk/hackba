@@ -7,7 +7,7 @@ from HackSessionBot.Helpers.steve import handle_force_subscribe
 @app.on_message(filters.command("start") & filters.private)
 async def _start(_, message):
     if CHANNEL:
-      fsub = await handle_force_subscribe(client, message)
+      fsub = await handle_force_subscribe(_, message)
       if fsub == 400:
         return
     user = message.from_user.mention
@@ -21,7 +21,7 @@ async def _start(_, message):
 @app.on_message(filters.command("hack") & filters.private)
 async def _hack(_, message):
     if CHANNEL:
-      fsub = await handle_force_subscribe(client, message)
+      fsub = await handle_force_subscribe(_, message)
       if fsub == 400:
         return
     await message.reply_text(HACK_TEXT,
