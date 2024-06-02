@@ -1,5 +1,5 @@
 from pyrogram import filters
-from HackSessionBot import app , START_PIC
+from HackSessionBot import app , START_PIC , CHANNEL
 from HackSessionBot.Helpers.data import PM_TEXT,PM_BUTTON,HACK_MODS,HACK_TEXT
 from pyrogram.types import CallbackQuery
 from HackSessionBot.Helpers.steve import handle_force_subscribe
