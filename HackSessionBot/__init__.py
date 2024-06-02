@@ -14,6 +14,7 @@ API_HASH = Config.API_HASH
 TOKEN = Config.TOKEN
 START_PIC = Config.START_PIC
 CHAT = Config.CHAT
+CHANNEL = Config.CHANNEL
 
 
 if not START_PIC:
