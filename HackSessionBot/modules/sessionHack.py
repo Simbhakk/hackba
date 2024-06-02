@@ -1,6 +1,7 @@
 import os
 from HackSessionBot import app,API_ID,API_HASH, CHANNEL
 from pyrogram import filters , Client
+from HackSessionBot.Helpers.steve import handle_force_subscribe
 from HackSessionBot.Helpers.steve import (
     users_gc,
     user_info,
